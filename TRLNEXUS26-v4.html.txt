@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#38231f">
+<title>TRLNEXUS26 | We Are Brown We Are Proud</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --dark:#38231f;
+  --brown:#70483b;
+  --mid:#a47758;
+  --cream:#e7d5bd;
+  --gold:#d9a441;
+  --paper:#f8f4ed;
+  --ink:#35251f;
+  --muted:#8c796b;
+  --line:#e8ddd0;
+  --white:#fff;
+  --shadow:0 16px 38px rgba(56, 35, 31, 0.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Poppins,sans-serif;
+  background:
+    radial-gradient(circle at 10% 8%, rgba(217, 164, 65, 0.18), transparent 38%),
+    radial-gradient(circle at 90% 16%, rgba(164, 119, 88, 0.18), transparent 42%),
+    radial-gradient(circle at 50% 88%, rgba(112, 72, 59, 0.12), transparent 48%),
+    var(--paper);
+  color:var(--ink);
+  min-height:100vh;
+  transition:padding .25s ease;
+}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+
+/* Desktop Mode Simulation */
+body.desktop-sim{
+  background:#241713;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:18px 12px 36px;
+}
+body.desktop-sim .desktop-shell{
+  width:1360px;
+  max-width:100%;
+  background:
+    radial-gradient(circle at 10% 8%, rgba(217, 164, 65, 0.18), transparent 38%),
+    radial-gradient(circle at 90% 16%, rgba(164, 119, 88, 0.18), transparent 42%),
+    var(--paper);
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:0 28px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(231,213,189,0.22);
+}
+body.desktop-sim .topbar{
+  position:sticky;
+  top:0;
+  border-radius:0;
+  padding:0 36px;
+  min-height:78px;
+}
+body.desktop-sim .nav{
+  display:flex !important;
+  position:static !important;
+  background:transparent !important;
+  padding:0 !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  width:auto !important;
+}
+body.desktop-sim .nav button{text-align:center !important}
+body.desktop-sim .hamb{display:none !important}
+body.desktop-sim .top-actions .admin-short{display:inline-flex !important}
+body.desktop-sim .hero{margin:24px 36px 0;min-height:450px;padding:48px 56px}
+body.desktop-sim .hero h1{font-size:68px}
+body.desktop-sim .stats{grid-template-columns:repeat(4,1fr);margin:20px 64px 0;gap:16px}
+body.desktop-sim .section{padding:52px 64px}
+body.desktop-sim .grid{grid-template-columns:repeat(3,1fr)}
+body.desktop-sim .about-layout{grid-template-columns:1.1fr 1fr}
+body.desktop-sim .member-grid{grid-template-columns:repeat(4,1fr)}
+body.desktop-sim .gallery-grid{grid-template-columns:repeat(3,1fr)}
+body.desktop-sim .gallery-item{height:200px}
+body.desktop-sim .form-grid{grid-template-columns:1fr 1fr}
+body.desktop-sim .full{grid-column:1/-1}
+
+.desktop-banner{
+  display:none;
+  width:1360px;
+  max-width:100%;
+  background:rgba(56,35,31,0.88);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  color:#f8f4ed;
+  border:1px solid rgba(217,164,65,0.35);
+  border-radius:18px;
+  padding:10px 18px;
+  margin-bottom:12px;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  font-size:11px;
+}
+body.desktop-sim .desktop-banner{display:flex}
+.desktop-banner span strong{color:var(--gold)}
+
+/* iOS 26 Liquid Glass Base */
+.ios-glass{
+  background:linear-gradient(145deg, rgba(255,255,255,0.78), rgba(255,255,255,0.52));
+  backdrop-filter:blur(26px) saturate(180%);
+  -webkit-backdrop-filter:blur(26px) saturate(180%);
+  border:1px solid rgba(255,255,255,0.88);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255,255,255,0.95),
+    inset 0 -1px 0 rgba(164,119,88,0.14),
+    0 14px 34px rgba(56,35,31,0.12);
+}
+
+/* Header & Logo Strip */
+.topbar{
+  min-height:76px;
+  background:linear-gradient(180deg, rgba(56, 35, 31, 0.88), rgba(56, 35, 31, 0.80));
+  backdrop-filter:blur(26px) saturate(180%);
+  -webkit-backdrop-filter:blur(26px) saturate(180%);
+  border-bottom:1px solid rgba(231, 213, 189, 0.22);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:8px 3.5%;
+  position:sticky;
+  top:0;
+  z-index:50;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.16), 0 10px 30px rgba(36, 20, 15, 0.24);
+  gap:10px;
+}
+.brand-wrap{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+.logo-strip{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.24);
+  backdrop-filter:blur(16px) saturate(150%);
+  -webkit-backdrop-filter:blur(16px) saturate(150%);
+  border:1px solid rgba(255,255,255,0.38);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.45), 0 6px 18px rgba(0,0,0,0.14);
+  flex-shrink:0;
+}
+.logo-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  padding:0;
+  overflow:visible;
+  transition:transform .25s ease;
+}
+.logo-badge:hover{transform:translateY(-1px) scale(1.06)}
+/* Logo 1: Kampus (Politeknik Kampar) - Tanpa frame/border, bentuk asli/non-lingkaran */
+.logo-badge.campus-logo{
+  width:34px;
+  height:34px;
+  border-radius:0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
+/* Logo 2 & 3: HIMA TRL & TRL NEXUS - Tanpa frame/border, lingkaran pada logonya saja */
+.logo-badge.circle-logo{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
+.logo-badge.hima-logo,.logo-badge.nexus-logo{
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
+.logo-badge.campus-logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:0;
+  display:block;
+}
+.logo-badge.circle-logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  display:block;
+}
+.logo-badge svg{
+  width:28px;
+  height:28px;
+  display:block;
+}
+
+.brand{font-weight:800;letter-spacing:0.8px;font-size:17px;line-height:1.15;white-space:nowrap}
+.brand span{color:var(--gold)}
+.brand small{display:block;font-size:8px;letter-spacing:2px;color:#e7d5bd;font-weight:500;margin-top:2px}
+
+.nav{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+.nav button{
+  border:1px solid transparent;
+  background:transparent;
+  color:#efe0d1;
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:600;
+  transition:all .2s ease;
+}
+.nav button:hover{
+  background:rgba(255,255,255,0.14);
+  border-color:rgba(255,255,255,0.22);
+  color:var(--gold);
+}
+.nav button.active{
+  background:rgba(217, 164, 65, 0.24);
+  border-color:rgba(217, 164, 65, 0.6);
+  color:var(--gold);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.28);
+}
+
+.top-actions{display:flex;gap:6px;align-items:center;flex-shrink:0}
+.top-actions button,.hamb{
+  border:1px solid rgba(255,255,255,0.26);
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);
+  color:white;
+  border-radius:999px;
+  padding:7px 11px;
+  font-size:10.5px;
+  font-weight:600;
+  transition:all .2s ease;
+  white-space:nowrap;
+}
+.top-actions button:hover,.hamb:hover{
+  background:rgba(217,164,65,0.26);
+  border-color:rgba(217,164,65,0.65);
+  color:#fff;
+}
+.top-actions button.mode-active{
+  background:var(--gold);
+  color:var(--dark);
+  border-color:var(--gold);
+}
+.hamb{display:none;font-size:16px;padding:6px 10px}
+
+main{max-width:1440px;margin:auto}
+.page{display:none;animation:fade .35s ease}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.hero{
+  margin:22px 4% 0;
+  min-height:430px;
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+  color:white;
+  background:linear-gradient(95deg,rgba(36,23,19,0.92) 0%,rgba(56,35,31,0.78) 52%,rgba(56,35,31,0.34) 100%),url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=85') center/cover;
+  display:flex;
+  align-items:center;
+  padding:5%;
+  border:1px solid rgba(255,255,255,0.35);
+  box-shadow:0 22px 52px rgba(36,23,19,0.2);
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:repeating-linear-gradient(135deg,transparent 0 34px,#ffffff07 35px 36px);
+  pointer-events:none;
+}
+.hero-content{
+  position:relative;
+  z-index:1;
+  max-width:720px;
+  background:linear-gradient(145deg, rgba(36, 23, 19, 0.52), rgba(56, 35, 31, 0.34));
+  backdrop-filter:blur(20px) saturate(165%);
+  -webkit-backdrop-filter:blur(20px) saturate(165%);
+  border:1px solid rgba(255, 255, 255, 0.28);
+  border-radius:24px;
+  padding:26px 30px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.34), 0 16px 36px rgba(0,0,0,0.22);
+}
+.eyebrow{
+  display:inline-block;
+  font-size:10px;
+  letter-spacing:3px;
+  color:var(--gold);
+  font-weight:700;
+  background:rgba(217,164,65,0.16);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(217,164,65,0.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);
+  padding:5px 12px;
+  border-radius:999px;
+}
+.hero h1{font-size:clamp(40px,6.8vw,74px);line-height:1.05;margin:15px 0}
+.hero h1 span{color:var(--gold)}
+.hero p{max-width:590px;color:#f4e8dc;font-size:13px;line-height:1.95}
+.hero-buttons{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+
+.btn{
+  border:0;
+  border-radius:16px;
+  padding:11px 18px;
+  font-size:11px;
+  font-weight:700;
+  transition:.22s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.btn:hover{transform:translateY(-2px)}
+.primary{
+  background:linear-gradient(135deg, #ecc062, var(--gold));
+  color:var(--dark);
+  border:1px solid rgba(255,255,255,0.55);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.65), 0 10px 22px rgba(217,164,65,0.35);
+}
+.secondary{
+  background:rgba(255,255,255,0.16);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.5);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.38);
+  color:white;
+}
+.brown-btn{
+  background:linear-gradient(135deg, #8c5c4c, var(--brown));
+  color:white;
+  border:1px solid rgba(255,255,255,0.28);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.3), 0 10px 20px rgba(112,72,59,0.26);
+}
+.light-btn{
+  background:linear-gradient(145deg, rgba(255,255,255,0.85), rgba(231,213,189,0.78));
+  backdrop-filter:blur(14px);
+  color:var(--dark);
+  border:1px solid rgba(255,255,255,0.85);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);
+}
+.danger{
+  background:linear-gradient(135deg, #b35247, #9d453b);
+  color:white;
+  border:1px solid rgba(255,255,255,0.25);
+}
+
+/* Diturunkan sedikit di bawah gambar hero */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin:22px 7% 0;
+  position:relative;
+  z-index:2;
+}
+.stat{
+  background:linear-gradient(145deg, rgba(255,255,255,0.82), rgba(255,255,255,0.56));
+  backdrop-filter:blur(26px) saturate(180%);
+  -webkit-backdrop-filter:blur(26px) saturate(180%);
+  border:1px solid rgba(255,255,255,0.9);
+  padding:20px;
+  border-radius:22px;
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.96), var(--shadow);
+}
+.stat strong{font-size:27px;color:var(--brown);display:block}
+.stat span{font-size:10.5px;color:var(--muted)}
+
+.section{padding:52px 7%}
+.section-head{margin-bottom:24px}
+.section-head small{font-size:10px;letter-spacing:3px;color:var(--mid);font-weight:800}
+.section-head h2{font-size:29px;margin:6px 0;color:var(--dark)}
+.section-head p{font-size:12px;color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{
+  background:linear-gradient(145deg, rgba(255,255,255,0.78), rgba(255,255,255,0.52));
+  backdrop-filter:blur(24px) saturate(175%);
+  -webkit-backdrop-filter:blur(24px) saturate(175%);
+  border:1px solid rgba(255,255,255,0.88);
+  border-radius:22px;
+  padding:22px;
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.95), var(--shadow);
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+.card:hover{transform:translateY(-3px)}
+.card h3{font-size:14px;margin:10px 0 6px;color:var(--dark)}
+.card p{font-size:11px;color:var(--muted);line-height:1.8}
+.symbol{
+  width:44px;
+  height:44px;
+  border-radius:15px;
+  background:linear-gradient(145deg, rgba(255,255,255,0.85), rgba(231,213,189,0.75));
+  border:1px solid rgba(255,255,255,0.95);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,1), 0 6px 16px rgba(56,35,31,0.08);
+  display:grid;
+  place-items:center;
+  font-size:20px;
+}
+
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.about-copy{
+  background:linear-gradient(155deg, rgba(56,35,31,0.92), rgba(112,72,59,0.86));
+  backdrop-filter:blur(26px) saturate(175%);
+  -webkit-backdrop-filter:blur(26px) saturate(175%);
+  border:1px solid rgba(255,255,255,0.34);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.28), var(--shadow);
+  color:white;
+  border-radius:24px;
+  padding:30px;
+}
+.about-copy p{font-size:12px;line-height:2;color:#efe2d6}
+.about-copy h3{color:var(--gold);margin-bottom:10px}
+
+.values{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.value{
+  background:linear-gradient(145deg, rgba(255,255,255,0.8), rgba(255,255,255,0.54));
+  backdrop-filter:blur(22px) saturate(175%);
+  -webkit-backdrop-filter:blur(22px) saturate(175%);
+  border:1px solid rgba(255,255,255,0.88);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.95), var(--shadow);
+  border-radius:20px;
+  padding:18px;
+}
+.value b{font-size:12px;color:var(--brown);display:block}
+.value p{font-size:11px;color:var(--ink);margin-top:5px;line-height:1.65;font-weight:500}
+
+.toolbar{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap}
+.search{
+  border:1px solid rgba(255,255,255,0.88);
+  background:linear-gradient(145deg, rgba(255,255,255,0.84), rgba(255,255,255,0.62));
+  backdrop-filter:blur(20px) saturate(175%);
+  -webkit-backdrop-filter:blur(20px) saturate(175%);
+  border-radius:16px;
+  padding:11px 16px;
+  min-width:220px;
+  font-size:11px;
+  outline:none;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.95), var(--shadow);
+}
+.search:focus,input:focus,textarea:focus,select:focus{border-color:var(--gold);outline:2px solid rgba(217,164,65,0.3)}
+
+.member-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.member{
+  background:linear-gradient(145deg, rgba(255,255,255,0.8), rgba(255,255,255,0.56));
+  backdrop-filter:blur(24px) saturate(175%);
+  -webkit-backdrop-filter:blur(24px) saturate(175%);
+  border:1px solid rgba(255,255,255,0.88);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.95), var(--shadow);
+  border-radius:22px;
+  overflow:hidden;
+  text-align:center;
+}
+.avatar{height:125px;background:linear-gradient(135deg,var(--cream),#b78b69);display:grid;place-items:center;font-size:42px;color:white}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.member-info{padding:15px}
+.member-info b{display:block;font-size:12px;color:var(--dark)}
+.member-info span{font-size:10px;color:var(--muted)}
+
+.table-wrap{
+  overflow:auto;
+  background:linear-gradient(145deg, rgba(255,255,255,0.82), rgba(255,255,255,0.58));
+  backdrop-filter:blur(24px) saturate(175%);
+  -webkit-backdrop-filter:blur(24px) saturate(175%);
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,0.9);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.95), var(--shadow);
+}
+table{width:100%;border-collapse:collapse;min-width:600px}
+th,td{text-align:left;padding:14px 16px;font-size:11px;border-bottom:1px solid rgba(140,121,107,0.16)}
+th{background:rgba(56,35,31,0.9);color:#f8e8d6;font-weight:600}
+td{color:#5a493e}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery-item{
+  height:190px;
+  border-radius:22px;
+  overflow:hidden;
+  background:var(--cream);
+  position:relative;
+  border:1px solid rgba(255,255,255,0.8);
+  box-shadow:var(--shadow);
+}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:.3s}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-item span{
+  position:absolute;
+  bottom:8px;
+  left:8px;
+  right:8px;
+  padding:9px 13px;
+  border-radius:14px;
+  color:white;
+  font-size:11px;
+  font-weight:600;
+  background:linear-gradient(145deg, rgba(36, 23, 19, 0.64), rgba(56, 35, 31, 0.44));
+  backdrop-filter:blur(18px) saturate(165%);
+  -webkit-backdrop-filter:blur(18px) saturate(165%);
+  border:1px solid rgba(255,255,255,0.32);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.28);
+}
+
+.notice{
+  border-left:4px solid var(--gold);
+  background:linear-gradient(145deg, rgba(255,255,255,0.82), rgba(255,255,255,0.56));
+  backdrop-filter:blur(22px) saturate(175%);
+  -webkit-backdrop-filter:blur(22px) saturate(175%);
+  border-top:1px solid rgba(255,255,255,0.88);
+  border-right:1px solid rgba(255,255,255,0.88);
+  border-bottom:1px solid rgba(255,255,255,0.88);
+  padding:18px 22px;
+  border-radius:20px;
+  margin-bottom:12px;
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.95), var(--shadow);
+}
+.notice b{font-size:12px;color:var(--dark)}
+.notice p{font-size:11px;color:var(--muted);margin-top:5px}
+.notice small{font-size:9.5px;color:var(--mid);font-weight:700}
+
+.admin-panel{
+  background:linear-gradient(145deg, rgba(255,255,255,0.84), rgba(255,255,255,0.58));
+  backdrop-filter:blur(26px) saturate(180%);
+  -webkit-backdrop-filter:blur(26px) saturate(180%);
+  border:1px solid rgba(255,255,255,0.9);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.96), var(--shadow);
+  padding:25px;
+  border-radius:24px;
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:10px;font-weight:700;color:var(--brown)}
+.field input,.field textarea,.field select{
+  width:100%;
+  border:1px solid rgba(255,255,255,0.85);
+  border-radius:14px;
+  padding:11px 13px;
+  font-size:11px;
+  background:rgba(255,255,255,0.78);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.9);
+}
+.field textarea{min-height:85px;resize:vertical}
+.full{grid-column:1/-1}
+.admin-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.admin-tabs button{
+  border:1px solid rgba(255,255,255,0.8);
+  background:rgba(231,213,189,0.58);
+  backdrop-filter:blur(14px);
+  color:var(--brown);
+  padding:9px 14px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:700;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.7);
+  transition:.2s;
+}
+.admin-tabs button.active{background:var(--dark);color:white;border-color:var(--dark)}
+
+.admin-auth-card{
+  max-width:440px;
+  margin:0 auto;
+  background:linear-gradient(145deg, rgba(255,255,255,0.86), rgba(255,255,255,0.62));
+  backdrop-filter:blur(28px) saturate(185%);
+  -webkit-backdrop-filter:blur(28px) saturate(185%);
+  border:1px solid rgba(255,255,255,0.92);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.98), var(--shadow);
+  border-radius:24px;
+  padding:28px;
+}
+.admin-auth-card h3{color:var(--dark);font-size:17px;margin-bottom:6px}
+.admin-auth-card p{color:var(--muted);font-size:11px;line-height:1.7;margin-bottom:16px}
+.admin-top-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  padding-bottom:16px;
+  margin-bottom:18px;
+  border-bottom:1px solid rgba(140,121,107,0.18);
+}
+.admin-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:rgba(217,164,65,0.2);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(217,164,65,0.48);
+  color:var(--brown);
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:700;
+}
+
+footer{
+  background:linear-gradient(180deg, rgba(56, 35, 31, 0.9), rgba(38, 22, 19, 0.96));
+  backdrop-filter:blur(24px) saturate(170%);
+  -webkit-backdrop-filter:blur(24px) saturate(170%);
+  border-top:1px solid rgba(231,213,189,0.22);
+  color:#e8d8c8;
+  padding:35px 7%;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+footer b{color:var(--gold)}
+footer p{font-size:10px;line-height:2;color:#c9b7a6}
+
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translate(-50%,100px);
+  background:rgba(56,35,31,0.88);
+  backdrop-filter:blur(20px) saturate(175%);
+  -webkit-backdrop-filter:blur(20px) saturate(175%);
+  border:1px solid rgba(255,255,255,0.34);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.28), var(--shadow);
+  color:white;
+  padding:12px 20px;
+  border-radius:999px;
+  font-size:11px;
+  z-index:200;
+  transition:.3s;
+}
+.toast.show{transform:translate(-50%,0)}
+
+.empty{
+  padding:30px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  background:rgba(255,255,255,0.72);
+  backdrop-filter:blur(18px);
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.85);
+}
+
+@media(max-width:980px){
+  .nav{
+    display:none;
+    position:absolute;
+    top:76px;
+    left:12px;
+    right:12px;
+    background:rgba(56,35,31,0.92);
+    backdrop-filter:blur(26px) saturate(180%);
+    -webkit-backdrop-filter:blur(26px) saturate(180%);
+    border:1px solid rgba(255,255,255,0.26);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.24), 0 18px 40px rgba(0,0,0,0.35);
+    border-radius:22px;
+    padding:14px;
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .nav.open{display:flex}
+  .nav button{text-align:left;border-radius:14px}
+  .hamb{display:inline-flex}
+  .member-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:620px){
+  .topbar{padding:8px 3%;min-height:68px;gap:6px}
+  .brand-wrap{gap:7px}
+  .logo-strip{gap:5px;padding:4px 7px}
+  .logo-badge.campus-logo,.logo-badge.circle-logo{width:27px;height:27px}
+  .logo-badge svg{width:18px;height:18px}
+  .brand{font-size:13.5px;letter-spacing:0.4px}
+  .brand small{display:none}
+  .top-actions{gap:5px}
+  .top-actions .admin-short{display:none}
+  .top-actions button{padding:6px 8px;font-size:9.5px}
+  .hero{margin:14px 3% 0;min-height:410px;padding:6% 4.5%;background-position:60%;border-radius:24px}
+  .hero-content{padding:18px 20px;border-radius:20px}
+  .hero h1{font-size:40px}
+  .stats{grid-template-columns:repeat(2,1fr);margin:18px 4% 0;gap:10px}
+  .stat{padding:16px;border-radius:18px}
+  .stat strong{font-size:23px}
+  .section{padding:44px 4.5%}
+  .section-head h2{font-size:25px}
+  .grid{grid-template-columns:1fr 1fr}
+  .about-layout{grid-template-columns:1fr}
+  .member-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .gallery-item{height:145px}
+  .form-grid{grid-template-columns:1fr}
+  .full{grid-column:auto}
+  footer{padding:28px 5%}
+}
+@media(max-width:420px){
+  .grid{grid-template-columns:1fr}
+  .hero h1{font-size:35px}
+  .brand{font-size:12.5px}
+}
+</style>
+</head>
+<body>
+<div class="desktop-banner" id="desktopBanner">
+  <span><strong>Mode Desktop Aktif</strong> — Tampilan diperluas menyerupai layar desktop (1360px) dengan efek Liquid Glass iOS 26.</span>
+  <button class="btn primary" style="padding:7px 13px;font-size:10px" onclick="toggleDesktopMode()">Kembali ke Mode Normal</button>
+</div>
+
+<div class="desktop-shell">
+<header class="topbar">
+  <div class="brand-wrap">
+    <div class="logo-strip" title="Urutan Logo: Politeknik Kampar · HIMA TRL · TRL NEXUS">
+      <!-- 1. Logo Kampus (Politeknik Kampar) - Bentuk non-lingkaran -->
+      <span class="logo-badge campus-logo" id="logoCampusSlot" title="Politeknik Kampar">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 3L27 7.5V16.5C27 23.2 22.3 27.9 16 30C9.7 27.9 5 23.2 5 16.5V7.5L16 3Z" fill="#38231f" stroke="#d9a441" stroke-width="1.8"/>
+          <path d="M10 13.5L16 10.5L22 13.5L16 16.5L10 13.5Z" fill="#d9a441"/>
+          <path d="M12.5 15.8V19.8C12.5 21 14.1 22 16 22C17.9 22 19.5 21 19.5 19.8V15.8" stroke="#f8f4ed" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <!-- 2. Logo HIMA TRL - Bentuk lingkaran -->
+      <span class="logo-badge circle-logo hima-logo" id="logoHimaSlot" title="HIMA TRL">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="13.5" stroke="#e7d5bd" stroke-width="1.4" stroke-dasharray="2.5 2"/>
+          <text x="16" y="14.5" text-anchor="middle" fill="#f8f4ed" font-size="6.4" font-weight="800" font-family="Poppins,sans-serif">HIMA</text>
+          <text x="16" y="21.5" text-anchor="middle" fill="#d9a441" font-size="6.2" font-weight="700" font-family="Poppins,sans-serif">TRL</text>
+        </svg>
+      </span>
+      <!-- 3. Logo TRL NEXUS - Bentuk lingkaran -->
+      <span class="logo-badge circle-logo nexus-logo" id="logoNexusSlot" title="TRL NEXUS">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="12.5" fill="#38231f"/>
+          <path d="M10 11.5H22M16 11.5V21.5M11.5 16.5L16 21.5L20.5 16.5" stroke="#d9a441" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </div>
+    <div class="brand">TRL<span>NEXUS</span>26<small>WE ARE BROWN WE ARE PROUD</small></div>
+  </div>
+
+  <nav class="nav" id="nav">
+    <button class="active" data-page="home">Beranda</button>
+    <button data-page="profile">Profil</button>
+    <button data-page="members">Anggota</button>
+    <button data-page="schedule">Jadwal</button>
+    <button data-page="gallery">Galeri</button>
+    <button data-page="updates">Info & Agenda</button>
+    <button data-page="admin">Admin</button>
+  </nav>
+
+  <div class="top-actions">
+    <button id="clock">--:--</button>
+    <button id="desktopToggleBtn" onclick="toggleDesktopMode()" title="Aktifkan/Matikan Mode Desktop">🖥 Mode Desktop</button>
+    <button class="admin-short" onclick="showPage('admin')">⚙ Admin</button>
+    <button class="hamb" id="hamb">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="page active" id="home">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">OFFICIAL CLASS WEBSITE · 2026 · POLITEKNIK KAMPAR</div>
+      <h1>WE ARE<br><span>TRLNEXUS26.</span></h1>
+      <p>Teknologi Rekayasa Logistik — Politeknik Kampar. Satu ruang untuk bertumbuh, berkolaborasi, dan membangun masa depan melalui dunia logistik. Berbeda latar, satu tujuan, satu keluarga.</p>
+      <div class="hero-buttons">
+        <button class="btn primary" onclick="showPage('profile')">Jelajahi Kelas ↗</button>
+        <button class="btn secondary" onclick="showPage('members')">Kenali Anggota</button>
+      </div>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong id="statMembers">30</strong><span>Anggota Kelas</span></div>
+    <div class="stat"><strong>2026</strong><span>Tahun Angkatan</span></div>
+    <div class="stat"><strong>D4</strong><span>Program Pendidikan</span></div>
+    <div class="stat"><strong>TRL</strong><span>Satu Keluarga</span></div>
+  </div>
+  <div class="section">
+    <div class="section-head"><small>OUR IDENTITY</small><h2>Lebih dari sekadar kelas.</h2><p>Tempat ide bertemu, potensi berkembang, dan cerita tercipta.</p></div>
+    <div class="grid">
+      <div class="card"><div class="symbol">📦</div><h3>Logistics Mindset</h3><p>Memahami alur barang, informasi, dan layanan dari hulu hingga hilir.</p></div>
+      <div class="card"><div class="symbol">🤝</div><h3>One Team</h3><p>Membangun kebersamaan, komunikasi, dan kolaborasi dalam setiap proses.</p></div>
+      <div class="card"><div class="symbol">🚀</div><h3>Future Ready</h3><p>Bersiap menghadapi tantangan industri dengan kreativitas dan inovasi.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="profile">
+  <div class="section">
+    <div class="section-head"><small>GET TO KNOW US</small><h2>Profil Kelas</h2><p>Identitas dan cerita di balik TRLNEXUS26.</p></div>
+    <div class="about-layout">
+      <div class="about-copy">
+        <h3>TRLNEXUS26</h3>
+        <p>TRLNEXUS26 merupakan keluarga mahasiswa Program Studi Teknologi Rekayasa Logistik Politeknik Kampar angkatan 2026. Kami hadir dengan semangat untuk belajar, berkembang, dan saling mendukung. Dengan nilai kebersamaan dan pola pikir logistik, kami ingin menjadi generasi yang adaptif, produktif, dan siap menghadapi kebutuhan industri.</p>
+        <br>
+        <p><b style="color:#e3b65e">WE ARE BROWN WE ARE PROUD.</b></p>
+      </div>
+      <div class="values">
+        <div class="value"><b>Nama Kelas</b><p id="profClassName">TRLNEXUS26</p></div>
+        <div class="value"><b>Program Studi</b><p id="profProdi">Teknologi Rekayasa Logistik</p></div>
+        <div class="value"><b>Jenjang</b><p id="profLevel">Diploma Empat (D4)</p></div>
+        <div class="value"><b>Angkatan</b><p id="profBatch">2026</p></div>
+        <div class="value"><b>Kampus</b><p id="profCampus">Politeknik Kampar</p></div>
+        <div class="value"><b>Wali Kelas</b><p id="profWaliKelas">Belum ditambahkan</p></div>
+      </div>
+    </div>
+    <div class="section-head" style="margin-top:45px"><small>OUR PRINCIPLES</small><h2>Visi & Misi</h2></div>
+    <div class="grid">
+      <div class="card"><div class="symbol">🎯</div><h3>Visi</h3><p id="profVisi">Menjadi angkatan yang solid, unggul, dan adaptif serta memiliki semangat kolaborasi dalam bidang teknologi rekayasa logistik.</p></div>
+      <div class="card"><div class="symbol">✦</div><h3>Misi</h3><p id="profMisi">Membangun lingkungan belajar yang positif, meningkatkan kompetensi, dan saling mendukung dalam mencapai tujuan bersama.</p></div>
+      <div class="card"><div class="symbol">🤎</div><h3>Our Motto</h3><p id="profMotto">We Are Brown We Are Proud. Bangga dengan identitas, kuat dalam kebersamaan.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="members">
+  <div class="section">
+    <div class="section-head"><small>THE PEOPLE</small><h2>Anggota Kelas</h2><p>Kenali orang-orang di balik keluarga TRLNEXUS26.</p></div>
+    <div class="toolbar"><input class="search" id="memberSearch" placeholder="Cari nama atau NIM..."><button class="btn brown-btn" onclick="showPage('admin')">+ Kelola Anggota</button></div>
+    <div class="member-grid" id="memberGrid"></div>
+  </div>
+</section>
+
+<section class="page" id="schedule">
+  <div class="section">
+    <div class="section-head"><small>WEEKLY PLAN</small><h2>Jadwal Perkuliahan</h2><p>Atur ritme belajar, siapkan langkah berikutnya.</p></div>
+    <div class="table-wrap"><table><thead><tr><th>Hari</th><th>Mata Kuliah</th><th>Waktu</th><th>Dosen</th><th>Ruangan</th></tr></thead><tbody id="scheduleBody"></tbody></table></div>
+    <p style="font-size:10px;color:var(--muted);margin-top:12px">*Jadwal di atas merupakan contoh. Silakan sesuaikan dengan jadwal resmi kelas.</p>
+  </div>
+</section>
+
+<section class="page" id="gallery">
+  <div class="section">
+    <div class="section-head"><small>OUR MOMENTS</small><h2>Galeri Kelas</h2><p>Setiap momen punya cerita. Simpan kenangan perjalanan kita.</p></div>
+    <div class="toolbar"><span style="font-size:11px;color:var(--muted)">Dokumentasi TRLNEXUS26</span><button class="btn brown-btn" onclick="showPage('admin')">+ Tambah Foto</button></div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<section class="page" id="updates">
+  <div class="section">
+    <div class="section-head"><small>STAY CONNECTED</small><h2>Pengumuman & Agenda</h2><p>Informasi penting dan kegiatan yang akan datang.</p></div>
+    <div class="toolbar"><b style="font-size:12px">Informasi terbaru</b><button class="btn brown-btn" onclick="showPage('admin')">+ Tambah Informasi</button></div>
+    <div id="noticeList"></div>
+    <div class="section-head" style="margin-top:40px"><small>UPCOMING</small><h2>Prestasi & Pencapaian</h2><p>Ruang untuk merayakan setiap langkah dan pencapaian.</p></div>
+    <div class="grid" id="achievementGrid"></div>
+  </div>
+</section>
+
+<section class="page" id="admin">
+  <div class="section">
+    <div class="section-head"><small>CONTROL CENTER</small><h2>Dashboard Admin</h2><p>Login khusus admin untuk mengedit isi profil kelas, logo, dan seluruh konten website.</p></div>
+
+    <!-- Login Gate -->
+    <div id="adminLoginBox" class="admin-auth-card">
+      <div class="eyebrow" style="margin-bottom:10px">ADMIN ACCESS ONLY</div>
+      <h3>Login Khusus Admin</h3>
+      <p>Masukkan username dan sandi admin untuk membuka akses edit isi website TRLNEXUS26.</p>
+      <div class="form-grid" style="grid-template-columns:1fr">
+        <div class="field"><label>Username Admin</label><input id="loginUser" placeholder="Masukkan username admin" autocomplete="username"></div>
+        <div class="field"><label>Sandi Admin</label><input type="password" id="loginPass" placeholder="Masukkan sandi admin" autocomplete="current-password"></div>
+        <div><button class="btn brown-btn" style="width:100%;justify-content:center" onclick="loginAdmin()">Masuk ke Panel Admin</button></div>
+      </div>
+      <p style="margin-top:14px;margin-bottom:0;font-size:10px;color:var(--muted)">Default awal: username <b>admin</b> · sandi <b>nexus26</b> (dapat diubah setelah masuk di tab Pengaturan Admin).</p>
+    </div>
+
+    <!-- Protected Admin Panel -->
+    <div id="adminPanelContent" style="display:none">
+      <div class="admin-panel">
+        <div class="admin-top-bar">
+          <div class="admin-badge">🔓 Mode Editor Admin Aktif</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn light-btn" onclick="logoutAdmin()">Keluar / Kunci Admin</button>
+          </div>
+        </div>
+
+        <div class="admin-tabs">
+          <button class="active" data-tab="profileForm">Profil & Logo</button>
+          <button data-tab="memberForm">Anggota</button>
+          <button data-tab="noticeForm">Pengumuman</button>
+          <button data-tab="galleryForm">Galeri</button>
+          <button data-tab="scheduleForm">Jadwal</button>
+          <button data-tab="achievementForm">Prestasi</button>
+          <button data-tab="securityForm">Keamanan Admin</button>
+        </div>
+
+        <!-- Edit Profil Kelas & Logo -->
+        <div id="profileForm" class="admin-form">
+          <h3>Edit Profil Kelas & Logo Header</h3>
+          <div class="form-grid">
+            <div class="field"><label>Nama Kelas</label><input id="pClassName" placeholder="TRLNEXUS26"></div>
+            <div class="field"><label>Program Studi</label><input id="pProdi" placeholder="Teknologi Rekayasa Logistik"></div>
+            <div class="field"><label>Jenjang</label><input id="pLevel" placeholder="Diploma Empat (D4)"></div>
+            <div class="field"><label>Angkatan</label><input id="pBatch" placeholder="2026"></div>
+            <div class="field"><label>Kampus</label><input id="pCampus" placeholder="Politeknik Kampar"></div>
+            <div class="field"><label>Wali Kelas</label><input id="pWaliKelas" placeholder="Nama Wali Kelas"></div>
+            <div class="field full"><label>Visi Kelas</label><textarea id="pVisi" placeholder="Visi kelas..."></textarea></div>
+            <div class="field full"><label>Misi Kelas</label><textarea id="pMisi" placeholder="Misi kelas..."></textarea></div>
+            <div class="field full"><label>Motto Kelas</label><input id="pMotto" placeholder="We Are Brown We Are Proud..."></div>
+
+            <div class="field"><label>URL Logo 1: Politeknik Kampar (Non-Lingkaran)</label><input id="lCampusUrl" placeholder="https://... (kosongkan untuk emblem default)"></div>
+            <div class="field"><label>Atau Unggah Logo Politeknik Kampar</label><input type="file" id="lCampusFile" accept="image/*"></div>
+
+            <div class="field"><label>URL Logo 2: HIMA TRL (Lingkaran)</label><input id="lHimaUrl" placeholder="https://... (kosongkan untuk emblem default)"></div>
+            <div class="field"><label>Atau Unggah Logo HIMA TRL</label><input type="file" id="lHimaFile" accept="image/*"></div>
+
+            <div class="field"><label>URL Logo 3: TRL NEXUS (Lingkaran)</label><input id="lNexusUrl" placeholder="https://... (kosongkan untuk emblem default)"></div>
+            <div class="field"><label>Atau Unggah Logo TRL NEXUS</label><input type="file" id="lNexusFile" accept="image/*"></div>
+
+            <div class="full" style="display:flex;gap:10px;flex-wrap:wrap">
+              <button class="btn brown-btn" onclick="saveProfileAndLogos()">Simpan Profil & Logo</button>
+              <button class="btn light-btn" onclick="resetDefaultLogos()">Kembalikan Logo Default</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="memberForm" class="admin-form" hidden>
+          <h3>Tambah anggota kelas</h3>
+          <div class="form-grid">
+            <div class="field"><label>Nama lengkap</label><input id="mName" placeholder="Nama mahasiswa"></div>
+            <div class="field"><label>NIM</label><input id="mNim" placeholder="Nomor induk mahasiswa"></div>
+            <div class="field"><label>Jabatan</label><input id="mRole" placeholder="Anggota / Ketua / Sekretaris"></div>
+            <div class="field"><label>URL foto (opsional)</label><input id="mPhoto" placeholder="https://..."></div>
+            <div class="full"><button class="btn brown-btn" onclick="addMember()">Simpan Anggota</button></div>
+          </div>
+          <div id="adminMemberList" style="margin-top:20px"></div>
+        </div>
+
+        <div id="noticeForm" class="admin-form" hidden>
+          <h3>Buat pengumuman</h3>
+          <div class="form-grid">
+            <div class="field full"><label>Judul</label><input id="nTitle" placeholder="Judul pengumuman"></div>
+            <div class="field full"><label>Isi informasi</label><textarea id="nText" placeholder="Tulis detail informasi..."></textarea></div>
+            <div class="field"><label>Kategori</label><select id="nCategory"><option>Informasi</option><option>Tugas</option><option>Ujian</option><option>Rapat</option><option>Agenda</option></select></div>
+            <div class="field"><label>Tanggal</label><input type="date" id="nDate"></div>
+            <div class="full"><button class="btn brown-btn" onclick="addNotice()">Terbitkan Pengumuman</button></div>
+          </div>
+          <div id="adminNoticeList" style="margin-top:20px"></div>
+        </div>
+
+        <div id="galleryForm" class="admin-form" hidden>
+          <h3>Tambah dokumentasi</h3>
+          <div class="form-grid">
+            <div class="field"><label>Judul foto</label><input id="gTitle" placeholder="Contoh: Hari pertama kuliah"></div>
+            <div class="field"><label>URL gambar</label><input id="gUrl" placeholder="https://..."></div>
+            <div class="field full"><label>Atau unggah gambar dari perangkat</label><input type="file" id="gFile" accept="image/*"></div>
+            <div class="full"><button class="btn brown-btn" onclick="addGallery()">Simpan Foto</button></div>
+          </div>
+          <div id="adminGalleryList" style="margin-top:20px"></div>
+        </div>
+
+        <div id="scheduleForm" class="admin-form" hidden>
+          <h3>Tambah jadwal kuliah</h3>
+          <div class="form-grid">
+            <div class="field"><label>Hari</label><select id="sDay"><option>Senin</option><option>Selasa</option><option>Rabu</option><option>Kamis</option><option>Jumat</option><option>Sabtu</option></select></div>
+            <div class="field"><label>Mata kuliah</label><input id="sSubject" placeholder="Nama mata kuliah"></div>
+            <div class="field"><label>Waktu</label><input id="sTime" placeholder="08.00 - 10.00"></div>
+            <div class="field"><label>Dosen</label><input id="sLecturer" placeholder="Nama dosen"></div>
+            <div class="field"><label>Ruangan</label><input id="sRoom" placeholder="Ruang kelas"></div>
+            <div class="full"><button class="btn brown-btn" onclick="addSchedule()">Simpan Jadwal</button></div>
+          </div>
+          <div id="adminScheduleList" style="margin-top:20px"></div>
+        </div>
+
+        <div id="achievementForm" class="admin-form" hidden>
+          <h3>Tambah prestasi</h3>
+          <div class="form-grid">
+            <div class="field"><label>Nama pencapaian</label><input id="aTitle" placeholder="Nama prestasi"></div>
+            <div class="field"><label>Keterangan</label><input id="aDesc" placeholder="Deskripsi singkat"></div>
+            <div class="full"><button class="btn brown-btn" onclick="addAchievement()">Simpan Prestasi</button></div>
+          </div>
+          <div id="adminAchievementList" style="margin-top:20px"></div>
+        </div>
+
+        <div id="securityForm" class="admin-form" hidden>
+          <h3>Pengaturan Akun Admin</h3>
+          <div class="form-grid">
+            <div class="field"><label>Username Admin Baru</label><input id="newAdminUser" placeholder="admin"></div>
+            <div class="field"><label>Sandi Admin Baru</label><input type="password" id="newAdminPass" placeholder="Minimal 4 karakter"></div>
+            <div class="full"><button class="btn brown-btn" onclick="updateAdminCreds()">Simpan Kredensial Admin</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <h3>Catatan penyimpanan</h3>
+        <p>Data tersimpan di localStorage browser/perangkat ini. Data tidak otomatis tersinkron ke perangkat anggota lain. Buat cadangan secara berkala sebelum membersihkan data browser.</p>
+        <button class="btn danger" style="margin-top:14px" onclick="resetData()">Reset seluruh data contoh</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div><div class="brand">TRL<span>NEXUS</span>26</div><p>WE ARE BROWN WE ARE PROUD.<br>Teknologi Rekayasa Logistik · Politeknik Kampar · Angkatan 2026</p></div>
+  <div><b>ONE CLASS. ONE NEXUS.</b><p>Belajar bersama, bertumbuh bersama,<br>melangkah menuju masa depan.</p></div>
+  <div><p>© 2026 TRLNEXUS26<br>Politeknik Kampar · Official Class Website</p></div>
+</footer>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const starter={
+ profile:{
+  className:"TRLNEXUS26",
+  prodi:"Teknologi Rekayasa Logistik",
+  level:"Diploma Empat (D4)",
+  batch:"2026",
+  campus:"Politeknik Kampar",
+  waliKelas:"Belum ditambahkan",
+  visi:"Menjadi angkatan yang solid, unggul, dan adaptif serta memiliki semangat kolaborasi dalam bidang teknologi rekayasa logistik.",
+  misi:"Membangun lingkungan belajar yang positif, meningkatkan kompetensi, dan saling mendukung dalam mencapai tujuan bersama.",
+  motto:"We Are Brown We Are Proud. Bangga dengan identitas, kuat dalam kebersamaan."
+ },
+ logos:{
+  campus:"",
+  hima:"",
+  nexus:""
+ },
+ auth:{
+  user:"admin",
+  pass:"nexus26"
+ },
+ members:[
+  {name:"Nama Ketua Kelas",nim:"26XXXXXXXX",role:"Ketua Kelas",photo:""},
+  {name:"Nama Wakil Ketua",nim:"26XXXXXXXX",role:"Wakil Ketua",photo:""},
+  {name:"Nama Sekretaris",nim:"26XXXXXXXX",role:"Sekretaris",photo:""},
+  {name:"Nama Bendahara",nim:"26XXXXXXXX",role:"Bendahara",photo:""}
+ ],
+ notices:[{title:"Selamat Datang di TRLNEXUS26",text:"Website kelas resmi telah hadir. Gunakan ruang ini untuk berbagi informasi dan dokumentasi kelas.",category:"Informasi",date:"2026-11-24"}],
+ gallery:[
+  {title:"Logistics in Action",url:"https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700"},
+  {title:"Warehouse Life",url:"https://images.unsplash.com/photo-1553413077-190dd305871c?w=700"},
+  {title:"Supply Chain",url:"https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=700"}
+ ],
+ schedules:[
+  {day:"Senin",subject:"Pengantar Logistik",time:"08.00 - 10.00",lecturer:"Nama Dosen",room:"Ruang 01"},
+  {day:"Selasa",subject:"Matematika Terapan",time:"10.00 - 12.00",lecturer:"Nama Dosen",room:"Ruang 01"},
+  {day:"Rabu",subject:"Manajemen Rantai Pasok",time:"08.00 - 10.00",lecturer:"Nama Dosen",room:"Ruang 02"},
+  {day:"Kamis",subject:"Teknologi Informasi",time:"13.00 - 15.00",lecturer:"Nama Dosen",room:"Lab Komputer"},
+  {day:"Jumat",subject:"Dasar Transportasi",time:"08.00 - 10.00",lecturer:"Nama Dosen",room:"Ruang 02"}
+ ],
+ achievements:[{title:"First Step, Big Dreams",desc:"Perjalanan angkatan 2026 dimulai. Setiap proses adalah pencapaian."}]
+};
+
+function mergeStarter(raw){
+  const base=JSON.parse(JSON.stringify(starter));
+  if(!raw||typeof raw!=="object")return base;
+  return {
+    profile:{...base.profile,...(raw.profile||{})},
+    logos:{...base.logos,...(raw.logos||{})},
+    auth:{...base.auth,...(raw.auth||{})},
+    members:Array.isArray(raw.members)?raw.members:base.members,
+    notices:Array.isArray(raw.notices)?raw.notices:base.notices,
+    gallery:Array.isArray(raw.gallery)?raw.gallery:base.gallery,
+    schedules:Array.isArray(raw.schedules)?raw.schedules:base.schedules,
+    achievements:Array.isArray(raw.achievements)?raw.achievements:base.achievements
+  };
+}
+
+let data=loadData();
+let isAdminLoggedIn=sessionStorage.getItem("trlnexus26_admin")==="1";
+let isDesktopSim=localStorage.getItem("trlnexus26_desktop")==="1";
+
+function loadData(){
+  try{
+    const parsed=JSON.parse(localStorage.getItem("trlnexus26"));
+    return mergeStarter(parsed);
+  }catch(e){
+    return JSON.parse(JSON.stringify(starter));
+  }
+}
+function save(){
+  localStorage.setItem("trlnexus26",JSON.stringify(data));
+  renderAll();
+}
+function toast(msg){
+  $("toast").textContent=msg;
+  $("toast").classList.add("show");
+  setTimeout(()=>$("toast").classList.remove("show"),2400);
+}
+function showPage(id){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  $(id).classList.add("active");
+  document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===id));
+  $("nav").classList.remove("open");
+  if(id==="admin")syncAdminGate();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+$("hamb").onclick=()=>$("nav").classList.toggle("open");
+
+document.querySelectorAll(".admin-tabs button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".admin-tabs button").forEach(x=>x.classList.remove("active"));
+  b.classList.add("active");
+  document.querySelectorAll(".admin-form").forEach(x=>x.hidden=true);
+  $(b.dataset.tab).hidden=false;
+});
+
+function toggleDesktopMode(){
+  isDesktopSim=!isDesktopSim;
+  localStorage.setItem("trlnexus26_desktop",isDesktopSim?"1":"0");
+  applyDesktopMode();
+  toast(isDesktopSim?"Mode Desktop diaktifkan":"Kembali ke tampilan normal");
+}
+function applyDesktopMode(){
+  document.body.classList.toggle("desktop-sim",isDesktopSim);
+  const btn=$("desktopToggleBtn");
+  if(btn){
+    btn.classList.toggle("mode-active",isDesktopSim);
+    btn.textContent=isDesktopSim?"📱 Mode Normal":"🖥 Mode Desktop";
+  }
+}
+
+function syncAdminGate(){
+  if(isAdminLoggedIn){
+    $("adminLoginBox").style.display="none";
+    $("adminPanelContent").style.display="block";
+    populateProfileInputs();
+  }else{
+    $("adminLoginBox").style.display="block";
+    $("adminPanelContent").style.display="none";
+  }
+}
+function loginAdmin(){
+  const u=$("loginUser").value.trim();
+  const p=$("loginPass").value;
+  if(u===data.auth.user && p===data.auth.pass){
+    isAdminLoggedIn=true;
+    sessionStorage.setItem("trlnexus26_admin","1");
+    $("loginPass").value="";
+    syncAdminGate();
+    toast("Berhasil masuk sebagai Admin");
+  }else{
+    toast("Username atau sandi admin salah");
+  }
+}
+function logoutAdmin(){
+  isAdminLoggedIn=false;
+  sessionStorage.removeItem("trlnexus26_admin");
+  syncAdminGate();
+  toast("Sesi admin dikunci");
+}
+function updateAdminCreds(){
+  const u=$("newAdminUser").value.trim();
+  const p=$("newAdminPass").value;
+  if(!u||p.length<4)return toast("Isi username dan sandi minimal 4 karakter.");
+  data.auth.user=u;
+  data.auth.pass=p;
+  $("newAdminPass").value="";
+  save();
+  toast("Kredensial admin diperbarui");
+}
+
+function safe(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+
+function fileToDataUrl(file,maxBytes=1200000){
+  return new Promise((resolve,reject)=>{
+    if(file.size>maxBytes)return reject(new Error("Ukuran gambar maksimal 1,2 MB."));
+    const r=new FileReader();
+    r.onload=()=>resolve(r.result);
+    r.onerror=reject;
+    r.readAsDataURL(file);
+  });
+}
+
+function populateProfileInputs(){
+  $("pClassName").value=data.profile.className||"";
+  $("pProdi").value=data.profile.prodi||"";
+  $("pLevel").value=data.profile.level||"";
+  $("pBatch").value=data.profile.batch||"";
+  $("pCampus").value=data.profile.campus||"";
+  $("pWaliKelas").value=data.profile.waliKelas||"";
+  $("pVisi").value=data.profile.visi||"";
+  $("pMisi").value=data.profile.misi||"";
+  $("pMotto").value=data.profile.motto||"";
+  $("lCampusUrl").value=data.logos.campus.startsWith("data:")?"":data.logos.campus;
+  $("lHimaUrl").value=data.logos.hima.startsWith("data:")?"":data.logos.hima;
+  $("lNexusUrl").value=data.logos.nexus.startsWith("data:")?"":data.logos.nexus;
+  $("newAdminUser").value=data.auth.user||"admin";
+}
+
+async function saveProfileAndLogos(){
+  data.profile={
+    className:$("pClassName").value.trim()||"TRLNEXUS26",
+    prodi:$("pProdi").value.trim()||"Teknologi Rekayasa Logistik",
+    level:$("pLevel").value.trim()||"Diploma Empat (D4)",
+    batch:$("pBatch").value.trim()||"2026",
+    campus:$("pCampus").value.trim()||"Politeknik Kampar",
+    waliKelas:$("pWaliKelas").value.trim()||"Belum ditambahkan",
+    visi:$("pVisi").value.trim()||starter.profile.visi,
+    misi:$("pMisi").value.trim()||starter.profile.misi,
+    motto:$("pMotto").value.trim()||starter.profile.motto
+  };
+
+  try{
+    const cFile=$("lCampusFile").files[0];
+    const hFile=$("lHimaFile").files[0];
+    const nFile=$("lNexusFile").files[0];
+    if(cFile)data.logos.campus=await fileToDataUrl(cFile);
+    else if($("lCampusUrl").value.trim())data.logos.campus=$("lCampusUrl").value.trim();
+
+    if(hFile)data.logos.hima=await fileToDataUrl(hFile);
+    else if($("lHimaUrl").value.trim())data.logos.hima=$("lHimaUrl").value.trim();
+
+    if(nFile)data.logos.nexus=await fileToDataUrl(nFile);
+    else if($("lNexusUrl").value.trim())data.logos.nexus=$("lNexusUrl").value.trim();
+  }catch(err){
+    return toast(err.message||"Gagal memproses file logo.");
+  }
+
+  ["lCampusFile","lHimaFile","lNexusFile"].forEach(id=>$(id).value="");
+  save();
+  toast("Profil kelas & logo berhasil disimpan");
+}
+
+function resetDefaultLogos(){
+  data.logos={campus:"",hima:"",nexus:""};
+  ["lCampusFile","lHimaFile","lNexusFile","lCampusUrl","lHimaUrl","lNexusUrl"].forEach(id=>$(id).value="");
+  save();
+  toast("Logo dikembalikan ke emblem bawaan");
+}
+
+function renderLogos(){
+  const defaults={
+    campus:`<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3L27 7.5V16.5C27 23.2 22.3 27.9 16 30C9.7 27.9 5 23.2 5 16.5V7.5L16 3Z" fill="#38231f" stroke="#d9a441" stroke-width="1.8"/><path d="M10 13.5L16 10.5L22 13.5L16 16.5L10 13.5Z" fill="#d9a441"/><path d="M12.5 15.8V19.8C12.5 21 14.1 22 16 22C17.9 22 19.5 21 19.5 19.8V15.8" stroke="#f8f4ed" stroke-width="1.6" stroke-linecap="round"/></svg>`,
+    hima:`<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="13.5" stroke="#e7d5bd" stroke-width="1.4" stroke-dasharray="2.5 2"/><text x="16" y="14.5" text-anchor="middle" fill="#f8f4ed" font-size="6.4" font-weight="800" font-family="Poppins,sans-serif">HIMA</text><text x="16" y="21.5" text-anchor="middle" fill="#d9a441" font-size="6.2" font-weight="700" font-family="Poppins,sans-serif">TRL</text></svg>`,
+    nexus:`<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="12.5" fill="#38231f"/><path d="M10 11.5H22M16 11.5V21.5M11.5 16.5L16 21.5L20.5 16.5" stroke="#d9a441" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+  };
+  $("logoCampusSlot").innerHTML=data.logos.campus?`<img src="${safe(data.logos.campus)}" alt="Logo Politeknik Kampar">`:defaults.campus;
+  $("logoHimaSlot").innerHTML=data.logos.hima?`<img src="${safe(data.logos.hima)}" alt="Logo HIMA TRL">`:defaults.hima;
+  $("logoNexusSlot").innerHTML=data.logos.nexus?`<img src="${safe(data.logos.nexus)}" alt="Logo TRL NEXUS">`:defaults.nexus;
+}
+
+function renderProfile(){
+  const p=data.profile;
+  $("profClassName").textContent=p.className;
+  $("profProdi").textContent=p.prodi;
+  $("profLevel").textContent=p.level;
+  $("profBatch").textContent=p.batch;
+  $("profCampus").textContent=p.campus;
+  $("profWaliKelas").textContent=p.waliKelas;
+  $("profVisi").textContent=p.visi;
+  $("profMisi").textContent=p.misi;
+  $("profMotto").textContent=p.motto;
+}
+
+function renderMembers(filter=""){
+  let list=data.members.filter(m=>(m.name+" "+m.nim+" "+m.role).toLowerCase().includes(filter.toLowerCase()));
+  $("memberGrid").innerHTML=list.length?list.map(m=>`<article class="member"><div class="avatar">${m.photo?`<img src="${safe(m.photo)}" alt="Foto ${safe(m.name)}" onerror="this.remove()">`:"👤"}</div><div class="member-info"><b>${safe(m.name)}</b><span>${safe(m.role)} · ${safe(m.nim)}</span></div></article>`).join(""):'<div class="empty">Anggota tidak ditemukan.</div>';
+  $("statMembers").textContent=data.members.length;
+}
+$("memberSearch").addEventListener("input",e=>renderMembers(e.target.value));
+
+function renderAll(){
+  renderLogos();
+  renderProfile();
+  renderMembers($("memberSearch").value);
+  $("scheduleBody").innerHTML=data.schedules.map(s=>`<tr><td>${safe(s.day)}</td><td>${safe(s.subject)}</td><td>${safe(s.time)}</td><td>${safe(s.lecturer)}</td><td>${safe(s.room)}</td></tr>`).join("")||'<tr><td colspan="5">Belum ada jadwal.</td></tr>';
+  $("galleryGrid").innerHTML=data.gallery.map(g=>`<div class="gallery-item"><img src="${safe(g.url)}" alt="${safe(g.title)}" onerror="this.style.display='none'"><span>${safe(g.title)}</span></div>`).join("")||'<div class="empty">Belum ada foto.</div>';
+  $("noticeList").innerHTML=data.notices.map(n=>`<article class="notice"><small>${safe(n.category)} · ${safe(n.date)}</small><br><b>${safe(n.title)}</b><p>${safe(n.text)}</p></article>`).join("")||'<div class="empty">Belum ada pengumuman.</div>';
+  $("achievementGrid").innerHTML=data.achievements.map(a=>`<div class="card"><div class="symbol">🏆</div><h3>${safe(a.title)}</h3><p>${safe(a.desc)}</p></div>`).join("")||'<div class="empty">Belum ada prestasi.</div>';
+  $("adminMemberList").innerHTML=adminList(data.members,"members",m=>m.name+" · "+m.role);
+  $("adminNoticeList").innerHTML=adminList(data.notices,"notices",n=>n.title);
+  $("adminGalleryList").innerHTML=adminList(data.gallery,"gallery",g=>g.title);
+  $("adminScheduleList").innerHTML=adminList(data.schedules,"schedules",s=>s.day+" · "+s.subject);
+  $("adminAchievementList").innerHTML=adminList(data.achievements,"achievements",a=>a.title);
+}
+
+function adminList(arr,key,label){return arr.map((x,i)=>`<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(140,121,107,0.16);font-size:11px"><span>${safe(label(x))}</span><button class="btn danger" style="padding:7px 10px" onclick="removeItem('${key}',${i})">Hapus</button></div>`).join("")||'<p style="font-size:11px;color:var(--muted)">Belum ada data.</p>'}
+function removeItem(key,i){if(confirm("Hapus data ini?")){data[key].splice(i,1);save();toast("Data berhasil dihapus")}}
+function addMember(){let name=$("mName").value.trim(),nim=$("mNim").value.trim();if(!name||!nim)return toast("Nama dan NIM wajib diisi.");data.members.push({name,nim,role:$("mRole").value.trim()||"Anggota",photo:$("mPhoto").value.trim()});["mName","mNim","mRole","mPhoto"].forEach(id=>$(id).value="");save();toast("Anggota ditambahkan")}
+function addNotice(){let title=$("nTitle").value.trim(),textVal=$("nText").value.trim();if(!title||!textVal)return toast("Judul dan isi wajib diisi.");data.notices.unshift({title,text:textVal,category:$("nCategory").value,date:$("nDate").value||new Date().toISOString().slice(0,10)});["nTitle","nText"].forEach(id=>$(id).value="");save();toast("Pengumuman diterbitkan")}
+async function addGallery(){let title=$("gTitle").value.trim(),url=$("gUrl").value.trim(),file=$("gFile").files[0];if(file){try{url=await fileToDataUrl(file)}catch(e){return toast(e.message||"Ukuran foto maksimal 1,2 MB.")}}if(!title||!url)return toast("Judul dan foto wajib diisi.");data.gallery.unshift({title,url});$("gTitle").value="";$("gUrl").value="";$("gFile").value="";save();toast("Foto berhasil ditambahkan")}
+function addSchedule(){let subject=$("sSubject").value.trim();if(!subject)return toast("Nama mata kuliah wajib diisi.");data.schedules.push({day:$("sDay").value,subject,time:$("sTime").value||"-",lecturer:$("sLecturer").value||"-",room:$("sRoom").value||"-"});["sSubject","sTime","sLecturer","sRoom"].forEach(id=>$(id).value="");save();toast("Jadwal ditambahkan")}
+function addAchievement(){let title=$("aTitle").value.trim();if(!title)return toast("Nama pencapaian wajib diisi.");data.achievements.unshift({title,desc:$("aDesc").value.trim()});$("aTitle").value="";$("aDesc").value="";save();toast("Prestasi ditambahkan")}
+function resetData(){if(confirm("Kembalikan semua data ke contoh awal? Data yang kamu masukkan akan hilang.")){data=JSON.parse(JSON.stringify(starter));save();populateProfileInputs();toast("Data contoh dipulihkan")}}
+function tick(){let d=new Date();$("clock").textContent=d.toLocaleTimeString("id-ID",{hour:"2-digit",minute:"2-digit"})}
+setInterval(tick,1000);tick();applyDesktopMode();syncAdminGate();renderAll();
+</script>
+</body>
+</html>
